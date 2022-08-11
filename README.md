@@ -13,5 +13,5 @@ In this repository, a documentation is given regarding the way in which Spark is
 ## References
 - [1] https://kubernetes.io/
 - [2] https://spark.apache.org/
-- [2] https://spark.apache.org/docs/latest/running-on-kubernetes.html
-- [3] https://diastema.gr/
+- [3] https://spark.apache.org/docs/latest/running-on-kubernetes.html
+- [4] https://diastema.gr/
