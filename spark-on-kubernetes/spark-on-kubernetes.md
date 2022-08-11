@@ -3,10 +3,10 @@
 This guide will show how to run a spark job on a kubernetes multinode cluster. Most of the examples that exist online, are actually in need of the reader to know about Google Clouds, AWS etc. This guide will focus more on how to run the job.
 - Kubernetes Master Node will be hosted here: 192.168.222.14:6443
 
-This guide is an extension of the official spark guide here [[1]](https://github.com/karamolegkos/Diastema/blob/main/diastema/spark-on-kubernetes/spark-on-kubernetes.md#references).
+This guide is an extension of the official spark guide here [[1]](https://github.com/DIASTEMA-UPRC/spark-on-kubernetes/blob/main/spark-on-kubernetes/spark-on-kubernetes.md#references).
 
 ## Prerequisites
-- Spark installed to use as a client machine [[2]](https://github.com/karamolegkos/Diastema/blob/main/diastema/spark-on-kubernetes/spark-on-kubernetes.md#references). It only need to be able to see the Kubernetes Master Host and IP as well as be able to make calls to them.
+- Spark installed to use as a client machine [[2]](https://github.com/DIASTEMA-UPRC/spark-on-kubernetes/blob/main/spark-on-kubernetes/spark-on-kubernetes.md#references). It only need to be able to see the Kubernetes Master Host and IP as well as be able to make calls to them.
 
 ## K8s Multinode in Minikube VM installation
 The machine that you will be using must have a good amount of RAM.
@@ -17,7 +17,7 @@ sudo apt update && sudo apt upgrade -y
 ```
 
 ### Docker Installation
-Install Docker [[4]](https://github.com/karamolegkos/Diastema/blob/main/diastema/spark-on-kubernetes/spark-on-kubernetes.md#references):
+Install Docker [[4]](https://github.com/DIASTEMA-UPRC/spark-on-kubernetes/blob/main/spark-on-kubernetes/spark-on-kubernetes.md#references):
 ```
 sudo apt-get install \
 ca-certificates \
@@ -46,7 +46,7 @@ sudo chmod 666 /var/run/docker.sock
 ```
 
 ### Install Minikube
-Run the following to download Minikube [[5]](https://github.com/karamolegkos/Diastema/blob/main/diastema/spark-on-kubernetes/spark-on-kubernetes.md#references):
+Run the following to download Minikube [[5]](https://github.com/DIASTEMA-UPRC/spark-on-kubernetes/blob/main/spark-on-kubernetes/spark-on-kubernetes.md#references):
 ```
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
@@ -57,7 +57,7 @@ To start a default cluster you can run the following:
 ```
 minikube start
 ```
-But you can also make a lot of configurations in the above command like the ones below. A good documentation on all the configurations that you are able to do, can be found here [[6]](https://github.com/karamolegkos/Diastema/blob/main/diastema/spark-on-kubernetes/spark-on-kubernetes.md#references)
+But you can also make a lot of configurations in the above command like the ones below. A good documentation on all the configurations that you are able to do, can be found here [[6]](https://github.com/DIASTEMA-UPRC/spark-on-kubernetes/blob/main/spark-on-kubernetes/spark-on-kubernetes.md#references)
 ```
 minikube start --cpus "3" --disk-size "48g" --memory "12g" --nodes 3
 ```
@@ -74,7 +74,7 @@ kubectl create clusterrolebinding spark-role --clusterrole=edit --serviceaccount
 ```
 
 ## Make your spark job
-To make the spark job, we need firstly, to have an image including the spark framework inside of it. As described here [[3]](https://github.com/karamolegkos/Diastema/blob/main/diastema/spark-on-kubernetes/spark-on-kubernetes.md#references), the 'docker-image-tool.sh' is able of building this image for us.
+To make the spark job, we need firstly, to have an image including the spark framework inside of it. As described here [[3]](https://github.com/DIASTEMA-UPRC/spark-on-kubernetes/blob/main/spark-on-kubernetes/spark-on-kubernetes.md#references), the 'docker-image-tool.sh' is able of building this image for us.
 
 After we have this image, we need to make our own image extending the image of the docker-image-tool.sh script.
 
